@@ -1,0 +1,171 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Mali HUB", "Synapse")
+local Tab = Window:NewTab("Teleport")
+local Section = Tab:NewSection("Teleport")
+local Tab = Window:NewTab("Misc")
+
+
+Section:NewButton("Anti AFK", "Turn on For AFK", function()
+local VirtualUser=game:service'VirtualUser'
+game:service'Players'.LocalPlayer.Idled:connect(function()
+VirtualUser:CaptureController()
+VirtualUser:ClickButton2(Vector2.new())
+end)
+
+warn("Anti-Afk has Loaded")
+end)
+
+Section:NewButton("1) TP ItemSpawn ( One Time )", "TP to Item Spawn", function()
+for i,v in pairs(game:GetService("Workspace").Drops:GetDescendants()) do
+    if v.Name == "TouchInterest" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame
+wait(0.3)
+end
+end
+warn("TP ItemSpawn ( One Time ) Loaded")
+end)
+
+Section:NewButton("2) TP ItemSpawn ( Loop )", "Loop TP for AFK Don't Forgot ON Anti AFK", function()
+_G.loop = true;
+while _G.loop do wait()
+
+for i,v in pairs(game:GetService("Workspace").Drops:GetDescendants()) do
+    if v.Name == "TouchInterest" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame
+wait(0.3)
+end
+end
+end
+warn("TP ItemSpawn ( Loop ) Loaded")
+end)
+
+Section:NewButton("3) Stop TP ItemSpawn (Loop)", "Click For Stop Loop", function()
+_G.loop = false;
+while _G.loop do wait()
+
+for i,v in pairs(game:GetService("Workspace").Drops:GetDescendants()) do
+    if v.Name == "TouchInterest" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame
+wait(0.3)
+end
+end
+end
+warn("Stop TP ItemSpawn (Loop) Loaded")
+end)
+
+Section:NewButton("4) TP Chests ( One Time )", "TP all chests and Stop", function()
+for i,v in pairs(game:GetService("Workspace").Chests:GetDescendants()) do
+    if v.Name == "TouchInterest" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame
+wait(0.3)
+end
+end
+warn("TP Chests ( One Time ) Loaded")
+end)
+
+
+Section:NewButton("5) TP Chests ( Loop )", "Loop TP for AFK Don't Forgot ON Anti AFK", function()
+_G.loop = true;
+while _G.loop do wait()
+
+for i,v in pairs(game:GetService("Workspace").Chests:GetDescendants()) do
+    if v.Name == "TouchInterest" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame
+wait(0.3)
+end
+end
+end
+
+end)
+
+
+Section:NewButton("6) Stop TP Chests (Loop)", "Click For Stop Loop", function()
+_G.loop = false;
+while _G.loop do wait()
+
+for i,v in pairs(game:GetService("Workspace").Chests:GetDescendants()) do
+    if v.Name == "TouchInterest" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame
+wait(0.3)
+end
+end
+end
+warn("Stop TP Chests (Loop) Loaded")
+end)
+
+Section:NewKeybind("Show/Hide UI ", "For Hide and Show UI ", Enum.KeyCode.F, function()
+	Library:ToggleUI()
+end)
+
+local Section = Tab:NewSection("Speed")
+
+Section:NewSlider("Set Speed", "SliderInfo", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+Section:NewLabel("Location")
+
+Section:NewButton("Nil Black Market Dealer ( Spin Fruit) ", "ButtonInfo", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-3067.76221, 131.261078, 442.22821, 0.0593550503, -9.14745897e-08, -0.998236954, -5.97457372e-08, 1, -9.5188625e-08, 0.998236954, 6.52903296e-08, 0.0593550503)
+end)
+
+Section:NewButton("Lvl. 1  Island", "ButtonInfo", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(8220.63965, 69.388298, -11356.4902, 0.0314961188, -5.30773718e-08, 0.999503851, 3.24476055e-08, 1, 5.20812371e-08, -0.999503851, 3.07911492e-08, 0.0314961188)
+end)
+
+Section:NewButton("Lvl. 25  Island", "ButtonInfo", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(4827.6377, 121.440056, -11944.752, -0.999987125, 9.5044399e-08, 0.0050684954, 9.52628554e-08, 1, 4.28594582e-08, -0.0050684954, 4.33417462e-08, -0.999987125)
+end)
+
+Section:NewButton("Lvl. 60  Island", "ButtonInfo", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1408.40015, 52.5771332, -12068.9502, -0.00439451076, 4.91208354e-08, 0.999990344, -7.64856054e-08, 1, -4.94574302e-08, -0.999990344, -7.67022073e-08, -0.00439451076)
+end)
+
+Section:NewButton("Lvl. 100 Island", "ButtonInfo", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1754.19812, 122.183167, -12381.2324, 0.999845445, -5.99791861e-08, -0.0175823737, 6.00583618e-08, 1, 3.97473032e-09, 0.0175823737, -5.03008435e-09, 0.999845445)
+end)
+
+Section:NewButton("Lvl. 125  Island", "ButtonInfo", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4967.59814, 91.9004211, -14650.8008, -0.232898012, 6.83107331e-08, -0.972501159, 6.03975607e-08, 1, 5.5778095e-08, 0.972501159, -4.57460878e-08, -0.232898012)
+end)
+
+Section:NewButton("Lvl. 160  Island", "ButtonInfo", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-8365.25879, 246.134995, -17686.7988, -0.0606233925, 2.684747e-08, -0.99816072, 3.87700538e-08, 1, 2.45422385e-08, 0.99816072, -3.72109099e-08, -0.0606233925)
+end)
+
+Section:NewButton("Lvl. 210  Island", "ButtonInfo", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-8772.7373, 1309.28516, -16303.0625, -0.979594231, 0.000166695594, 0.200985327, 9.69488951e-07, 0.999999642, -0.000824620831, -0.200985402, -0.000807597185, -0.979593933)
+end)
+
+Section:NewButton("Lvl. 280  Island", "ButtonInfo", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-5189.85107, 1520.40918, -10475.5469, 0.418530524, -1.17173542e-08, 0.908202708, 1.34501699e-08, 1, 6.70340139e-09, -0.908202708, 9.40990308e-09, 0.418530524)
+end)
+
+Section:NewButton("Lvl. 350  Island", "ButtonInfo", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-386.502014, 1381.31653, -12759.7334, -0.0128077781, 1.82295974e-08, -0.999917984, -2.44264786e-09, 1, 1.82623801e-08, 0.999917984, 2.67634803e-09, -0.0128077781)
+end)
+
+Section:NewButton("Lvl. 420  Island", "ButtonInfo", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-11794.0449, 118.447243, -9662.82617, -0.025954742, 6.64837074e-08, 0.999663115, 6.98860134e-08, 1, -6.46916263e-08, -0.999663115, 6.8183418e-08, -0.025954742)
+end)
+
+Section:NewButton("Lvl. 490  Island", "ButtonInfo", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-15326.0986, 142.18367, -7388.1333, 0.0205352865, 1.28041346e-08, -0.999789119, -8.36022984e-09, 1, 1.26351187e-08, 0.999789119, 8.09900147e-09, 0.0205352865)
+end)
+
+Section:NewButton("Lvl. 570  Island", "ButtonInfo", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(974.411621, 94.5070877, 4581.65576, -0.0390057005, -8.69449295e-08, -0.999238968, 4.68646846e-08, 1, -8.88405296e-08, 0.999238968, -5.02943074e-08, -0.0390057005)
+end)
+
+Section:NewButton("Lvl. 680  Island", "ButtonInfo", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5746.94727, 121.272804, -2875.43945, -0.999007404, -1.03153361e-08, 0.0445444323, -1.15732508e-08, 1, -2.7981649e-08, -0.0445444323, -2.84693975e-08, -0.999007404)
+end)
+
+Section:NewButton("Lvl. 770  Island", "ButtonInfo", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(8998.28613, 98.6146545, -2929.76025, 0.0186756607, 1.85403497e-08, -0.999825597, 7.13857631e-08, 1, 1.98769925e-08, 0.999825597, -7.17445303e-08, 0.0186756607)
+end)
+
+Section:NewButton("Lvl. 850  Island", "ButtonInfo", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(10151.6299, 171.616898, -7016.62549, -0.0979620814, -4.52063098e-08, 0.995190144, 1.00763302e-07, 1, 5.5343488e-08, -0.995190144, 1.05700209e-07, -0.0979620814)
+end)
+
